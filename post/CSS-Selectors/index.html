@@ -4,22 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Learn Record Share</title>
+    <title>CSS-Selectors | Learn Record Share</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Vantic Zhou">
     
 
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Learn Record Share">
-<meta property="og:url" content="http://vanticz.github.io/index.html">
+    <meta name="description" content="To begin withI’m following the book Cascading Style Sheets: The Definitive Guide for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS-Selectors">
+<meta property="og:url" content="http://vanticz.github.io/post/CSS-Selectors/index.html">
 <meta property="og:site_name" content="Learn Record Share">
-<meta property="og:description">
+<meta property="og:description" content="To begin withI’m following the book Cascading Style Sheets: The Definitive Guide for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep w">
+<meta property="og:updated_time" content="2015-11-17T13:37:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Learn Record Share">
-<meta name="twitter:description">
+<meta name="twitter:title" content="CSS-Selectors">
+<meta name="twitter:description" content="To begin withI’m following the book Cascading Style Sheets: The Definitive Guide for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep w">
 
     
     <link rel="alternative" href="/atom.xml" title="Learn Record Share" type="application/atom+xml">
@@ -73,12 +74,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/post/CSS-Selectors/" title="CSS-Selectors" itemprop="url">CSS-Selectors</a>
@@ -92,9 +91,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <h2 id="To_begin_with">To begin with</h2><p>I’m following the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="external">Cascading Style Sheets: The Definitive Guide</a></strong> for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep what CSS can do, and I personally like <strong><em>O’Reilly Media</em></strong> series.</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#To_begin_with"><span class="toc-number">1.</span> <span class="toc-text">To begin with</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Now_let’s_start_with_today’s_topic:_Selectors"><span class="toc-number">2.</span> <span class="toc-text">Now let’s start with today’s topic: Selectors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick_review_on_basic_CSS_selectors"><span class="toc-number">2.1.</span> <span class="toc-text">Quick review on basic CSS selectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attribute_Selectors"><span class="toc-number">2.2.</span> <span class="toc-text">Attribute Selectors</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="To_begin_with">To begin with</h2><p>I’m following the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="external">Cascading Style Sheets: The Definitive Guide</a></strong> for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep what CSS can do, and I personally like <strong><em>O’Reilly Media</em></strong> series.</p>
 <h2 id="Now_let’s_start_with_today’s_topic:_Selectors">Now let’s start with today’s topic: Selectors</h2><h3 id="Quick_review_on_basic_CSS_selectors">Quick review on basic CSS selectors</h3><p><strong>Element Selector:</strong> <code>Selector {Property: Value; Property: Value;}</code></p>
 <p><strong>Universal Selector:</strong> <code>* {Property: Value;}</code></p>
 <p><strong>Class Selector:</strong> <code>.Classname {Property: Value;}</code></p>
@@ -115,14 +121,9 @@
 <p><strong>A Particular Attribute Selection Type:</strong> <code>*[lang|=&quot;en&quot;] {color: white;}</code> selects any element whose lang attribute is equal to en or begins with en-. This is useful when you have a series of, say, image files <em>figure-1.jpg</em>, <em>figure-2.png</em>, <em>figure-1.gif</em>, etc. You can select the all using <code>img[src|=&quot;figure&quot;] {}</code></p>
 <hr>
 <p>I’ll stop here and leave Selector of <em>Document Structure</em>, <em>Pseudo-Class</em>, and <em>Pseudo-Elements</em> next post.</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -135,82 +136,49 @@
 
 
 
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://vanticz.github.io/post/CSS-Selectors/" data-title="CSS-Selectors | Learn Record Share" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/CSS-Selectors/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/post/hello-hexo/" title="Hello Hexo!" itemprop="url">Hello Hexo!</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Vantic Zhou" target="_blank" itemprop="author">Vantic Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-03T23:51:12.000Z" itemprop="datePublished"> Published 2015-11-03</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Thanks to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> and theme <a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a> so I can build my blog easily!</p>
-<p>This blog is mainly a self-learning record, I’ll also post some tips or things I personally think worth sharing.</p>
-<p>Hope this could be a self-motivation and help someone at the mean time.</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
-	  	<span></span>
-		<a href="/post/hello-hexo/#disqus_thread" class="comments-count-link">Comments</a>
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/post/hello-hexo/"  title="Hello Hexo!">
+ <strong>next:</strong><br/> 
+ <span>Hello Hexo!
+</span>
+</a>
+</div>
+
+</nav>
+
 	
-</div>
 
-</footer>
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
-
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#To_begin_with"><span class="toc-number">1.</span> <span class="toc-text">To begin with</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Now_let’s_start_with_today’s_topic:_Selectors"><span class="toc-number">2.</span> <span class="toc-text">Now let’s start with today’s topic: Selectors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick_review_on_basic_CSS_selectors"><span class="toc-number">2.1.</span> <span class="toc-text">Quick review on basic CSS selectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attribute_Selectors"><span class="toc-number">2.2.</span> <span class="toc-text">Attribute Selectors</span></a></li></ol></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -330,12 +298,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -416,4 +461,4 @@ $(document).ready(function(){
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
