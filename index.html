@@ -7,7 +7,7 @@
     <title>Learn Record Share</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="Vantic Zhou">
+    <meta name="author" content="Zeming Zhou">
     
 
     
@@ -81,11 +81,96 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/post/Manachers-Algorithm/" title="Manacher&#39;s Algorithm" itemprop="url">Manacher&#39;s Algorithm</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
+		
+  <p class="article-time">
+    <time datetime="2016-11-29T15:58:42.000Z" itemprop="datePublished"> Published 2016-11-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.</p>
+<p>A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward, such as ‘madam’ or ‘kayak’.</p>
+</blockquote>
+<p>Manacher’s algorithm can find the longest palindromic substring in time complexity <strong>O(n)</strong>.</p>
+<p>Algorithms are different when detecting odd-length palindrome and even-length palindrome. So the first step of Manacher’s algorithm uses a trick to eliminate this difference: pick a special character that does not exist in the original string, insert it on both sides of each character.</p>
+<p>For example:</p>
+<p><code>aba</code> and <code>|</code> becomes <code>|a|b|a|</code></p>
+<p><code>abba</code> and <code>#</code> becomes <code>#a#b#b#a#</code></p>
+<p>Now the length of the new string is guaranteed to be odd, we call this new string <em>S</em> for simplicity.</p>
+<p>Then it uses an helper array/list P to track the radius of the longest palindrome centered at each character. P[i] is the radius of the longest palindrome centered at S[i], and P[i] has a minimum value 1, when the longest palindrome is S[i] itself.</p>
+<p>For example:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S:	<span class="preprocessor"># a # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">S:	<span class="preprocessor"># a # b # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>We can prove that P[i]-1 is the length of palindrome centered at S[i] in the original string.</p>
+<p><strong>Proof:</strong></p>
+<p>A palindrome in the new string S must begin and end with #</p>
+<pre><code><span class="tag">e</span><span class="class">.g</span>. #, <span class="id">#a</span>#, <span class="id">#a</span><span class="id">#b</span><span class="id">#b</span><span class="id">#a</span>#
+</code></pre><p>If we get rid of a # either at the begining or the end of palindrome, each character has a # to pair with.</p>
+<pre><code>e.g. <span class="comment">()</span>, <span class="comment">(a#)</span>, <span class="comment">(a#)</span><span class="comment">(b#)</span><span class="comment">(b#)</span><span class="comment">(a#)</span>
+</code></pre><p>That means the length of palindrome in S minus one is twice the size of palindrome in the original string.</p>
+<p>Let L = 2 * P[i] - 1 be the length of palindrome in S centered at S[i], then the length of palindrome in original string is (L - 1) / 2,<br>equals to P[i] - 1.</p>
+<p>End of proof.</p>
+<p>Because palindromics are symmetric, we can use dynamic programming to reuse some calculation. We add aother different special character at the begining to prevent potential index out of bound error, now useful indices starts from 1.</p>
+<p>The code structure in pseudo-code:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">S = new string mentioned above</span><br><span class="line">P = []</span><br><span class="line">maxId = <span class="number">0</span></span><br><span class="line">id = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="tag">i</span> <span class="keyword">in</span> <span class="number">1</span> to sLen:</span><br><span class="line">	<span class="keyword">if</span> maxId &gt; <span class="tag">i</span>:</span><br><span class="line">		P[i] = <span class="function"><span class="title">min</span><span class="params">(p[<span class="number">2</span>*id-i], maxId-i)</span></span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		P[i] = <span class="number">1</span></span><br><span class="line">		</span><br><span class="line">	while S[i+P[i]] == S[i-P[i]]:</span><br><span class="line">		P[i]++</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> P[i]+<span class="tag">i</span> &gt; maxId:</span><br><span class="line">		maxId = P[i] + <span class="tag">i</span></span><br><span class="line">		id = i</span><br></pre></td></tr></table></figure>
+<h4 id="Source">Source</h4><p>[1] Wikipedia: <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring" target="_blank" rel="external">Longest palindromic substring</a></p>
+<p>[2] Wikipedia: <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank" rel="external">Palindrome</a></p>
+<p>[3] GeeksforGeeks: <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/" target="_blank" rel="external">Manacher’s Algorithm – Part 1</a> <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-2/" target="_blank" rel="external">Part 2</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Algorithm/">Algorithm</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/post/Manachers-Algorithm/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/post/CSS-Selectors-2/" title="CSS-Selectors(2)" itemprop="url">CSS-Selectors(2)</a>
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Vantic Zhou" target="_blank" itemprop="author">Vantic Zhou</a>
+		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
 		
   <p class="article-time">
     <time datetime="2015-11-18T15:20:09.000Z" itemprop="datePublished"> Published 2015-11-18</time>
@@ -183,7 +268,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Vantic Zhou" target="_blank" itemprop="author">Vantic Zhou</a>
+		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
 		
   <p class="article-time">
     <time datetime="2015-11-11T03:07:28.000Z" itemprop="datePublished"> Published 2015-11-10</time>
@@ -261,7 +346,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Vantic Zhou" target="_blank" itemprop="author">Vantic Zhou</a>
+		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
 		
   <p class="article-time">
     <time datetime="2015-11-03T23:51:12.000Z" itemprop="datePublished"> Published 2015-11-03</time>
@@ -325,6 +410,10 @@
 				<li><a href="/tags/CSS/" title="CSS">CSS<sup>2</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
@@ -354,7 +443,7 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Vantic Zhou. <br/>
+		<p> Hello ,I&#39;m Zeming (Van) Zhou. <br/>
 			</p>
 	</section>
 	 
@@ -376,9 +465,9 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
 		
-		<a href="/about" target="_blank" title="Vantic Zhou">Vantic Zhou</a>
+		<a href="/about" target="_blank" title="Zeming Zhou">Zeming Zhou</a>
 		
 		
 		</p>

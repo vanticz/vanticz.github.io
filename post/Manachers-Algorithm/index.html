@@ -4,29 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>CSS-Selectors(2) | Learn Record Share</title>
+    <title>Manacher&#39;s Algorithm | Learn Record Share</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Zeming Zhou">
     
 
     
-    <meta name="description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:
-
-HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
+    <meta name="description" content="In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS-Selectors(2)">
-<meta property="og:url" content="http://vanticz.github.io/post/CSS-Selectors-2/index.html">
+<meta property="og:title" content="Manacher's Algorithm">
+<meta property="og:url" content="http://vanticz.github.io/post/Manachers-Algorithm/index.html">
 <meta property="og:site_name" content="Learn Record Share">
-<meta property="og:description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:
-
-HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
-<meta property="og:updated_time" content="2015-11-20T17:33:19.000Z">
+<meta property="og:description" content="In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.">
+<meta property="og:updated_time" content="2016-11-29T19:43:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS-Selectors(2)">
-<meta name="twitter:description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:
-
-HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
+<meta name="twitter:title" content="Manacher's Algorithm">
+<meta name="twitter:description" content="In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.">
 
     
     <link rel="alternative" href="/atom.xml" title="Learn Record Share" type="application/atom+xml">
@@ -86,14 +80,14 @@ HTML documents are based on hierarchy of elements, each element is either the pa
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/post/CSS-Selectors-2/" title="CSS-Selectors(2)" itemprop="url">CSS-Selectors(2)</a>
+      <a href="/post/Manachers-Algorithm/" title="Manacher&#39;s Algorithm" itemprop="url">Manacher&#39;s Algorithm</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-18T15:20:09.000Z" itemprop="datePublished"> Published 2015-11-18</time>
+    <time datetime="2016-11-29T15:58:42.000Z" itemprop="datePublished"> Published 2016-11-29</time>
     
   </p>
 </header>
@@ -102,51 +96,38 @@ HTML documents are based on hierarchy of elements, each element is either the pa
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#This_is_the_second_part_of_CSS_Selector"><span class="toc-number">1.</span> <span class="toc-text">This is the second part of CSS Selector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using_Document_Structure"><span class="toc-number">1.1.</span> <span class="toc-text">Using Document Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pseudo-Classes_and_Pseudo-Elements"><span class="toc-number">1.2.</span> <span class="toc-text">Pseudo-Classes and Pseudo-Elements</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Source"><span class="toc-number">1.</span> <span class="toc-text">Source</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="This_is_the_second_part_of_CSS_Selector">This is the second part of CSS Selector</h2><h3 id="Using_Document_Structure">Using Document Structure</h3><p><strong>Understanding parent-child relationship:</strong></p>
-<blockquote>
-<p>HTML documents are based on hierarchy of elements, each element is either the <em>parent</em> or the <em>child</em> of another element (usually both, except leaves and the root ). Generally in tree structure of HTML document, elements above one element is called <em>ancestor</em>, and elements beneath it are called <em>descendant</em>. <em>Parent</em> and <em>child</em> are specific terms, they are <em>ancestor</em> or <em>descendant</em> of exactly <strong>one</strong> layer.</p>
+		<blockquote>
+<p>In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.</p>
+<p>A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward, such as ‘madam’ or ‘kayak’.</p>
 </blockquote>
-<p><strong>Descendant Selectors:</strong> (AKA, <em>contextual selectors</em>) a white space between selectors. Example: <code>h1 em {color: gray;}</code> This will ‘gray’ any em elements that is a decendant of an h1.</p>
-<p><strong>Selecting Children:</strong> using the greater-than sign, Example: <code>h1 &gt; strong {color: red;}</code> This selects the first bot not the second line below.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>so<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>very <span class="tag">&lt;<span class="title">strong</span>&gt;</span>but not that<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>In the first line, strong is a child of h1, while in the second line, strong is a descendant of h1, not a child.</p>
-<p><strong>Selecting Adjacent Sibling Elements:</strong> using the plus sign. Example: <code>h1 + p {margin-top: 0};</code> This selects the paragraph “immediately <strong>follows</strong> an h1 element that shares a parent with the p element”, can not select the sibling before.</p>
-<h3 id="Pseudo-Classes_and_Pseudo-Elements">Pseudo-Classes and Pseudo-Elements</h3><p><strong>Syntax:</strong> <em>Pseudo-</em> started selectors share the same syntas, the colon.</p>
-<p><strong>Pseudo-Class Selectors:</strong>  </p>
-<ul>
-<li>Link pseudo-classes<ol>
-<li><code>:link</code> is for unvisited link, can be written as <code>a:link {clolr: blue;}</code> but this is redundant, usually just omitted. <code>a {clolr: blue;}</code></li>
-<li><code>:visited</code> for hyperlinks to already visited address. <code>a:visited {clolr: red;}</code></li>
-</ol>
-</li>
-<li>Dynamic pseudo-classes<ol>
-<li><code>:focus</code> is the element currently has the input focus, example <code>input:focus {...}</code></li>
-<li><code>:hover</code> is the element your mouse pointer is placed on.</li>
-<li><code>:active</code> is the element activated by user input, like click and hold mouse on an element.</li>
-</ol>
-</li>
-<li>Selecting a first child<ul>
-<li>This could be misunderstanding, for example <code>p:first-child</code> <strong>DOES NOT</strong> select the first child of a <em>p</em> element, it selects any <em>p</em> element that is the first child of <strong>another element</strong>.</li>
-</ul>
-</li>
-<li>Selecting based on language<ul>
-<li><code>*:lang(en) {...}</code> this is exactly like <code>|=</code> attribute selector from last post.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Combining pseudo-classes</strong> is just like grouping, example: <code>a:link:hover:lang(en) {...}</code></p>
-<p><strong>Pseudo-Element Selectors:</strong>  </p>
-<ul>
-<li><code>:first-letter</code> and <code>:first-line</code> are literally the first letter and line of an element.</li>
-<li><p><code>:before</code> and <code>:after</code>: Used to add contents before or after an element, for example, the following code add “[[“ and “]]” around any h2 elements.</p>
-  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h2</span><span class="pseudo">:before</span> <span class="rules">&#123;<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"[["</span></span></span>;&#125;</span></span><br><span class="line"><span class="tag">h2</span><span class="pseudo">:after</span> <span class="rules">&#123;<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"]]"</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>This is the end of CSS Selectors, again this is just my simple summary when learning by the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="external">Cascading Style Sheets: The Definitive Guide</a></strong>. All the code parts above are based on examples in book.</p>
+<p>Manacher’s algorithm can find the longest palindromic substring in time complexity <strong>O(n)</strong>.</p>
+<p>Algorithms are different when detecting odd-length palindrome and even-length palindrome. So the first step of Manacher’s algorithm uses a trick to eliminate this difference: pick a special character that does not exist in the original string, insert it on both sides of each character.</p>
+<p>For example:</p>
+<p><code>aba</code> and <code>|</code> becomes <code>|a|b|a|</code></p>
+<p><code>abba</code> and <code>#</code> becomes <code>#a#b#b#a#</code></p>
+<p>Now the length of the new string is guaranteed to be odd, we call this new string <em>S</em> for simplicity.</p>
+<p>Then it uses an helper array/list P to track the radius of the longest palindrome centered at each character. P[i] is the radius of the longest palindrome centered at S[i], and P[i] has a minimum value 1, when the longest palindrome is S[i] itself.</p>
+<p>For example:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S:	<span class="preprocessor"># a # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">S:	<span class="preprocessor"># a # b # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>We can prove that P[i]-1 is the length of palindrome centered at S[i] in the original string.</p>
+<p><strong>Proof:</strong></p>
+<p>A palindrome in the new string S must begin and end with #</p>
+<pre><code><span class="tag">e</span><span class="class">.g</span>. #, <span class="id">#a</span>#, <span class="id">#a</span><span class="id">#b</span><span class="id">#b</span><span class="id">#a</span>#
+</code></pre><p>If we get rid of a # either at the begining or the end of palindrome, each character has a # to pair with.</p>
+<pre><code>e.g. <span class="comment">()</span>, <span class="comment">(a#)</span>, <span class="comment">(a#)</span><span class="comment">(b#)</span><span class="comment">(b#)</span><span class="comment">(a#)</span>
+</code></pre><p>That means the length of palindrome in S minus one is twice the size of palindrome in the original string.</p>
+<p>Let L = 2 * P[i] - 1 be the length of palindrome in S centered at S[i], then the length of palindrome in original string is (L - 1) / 2,<br>equals to P[i] - 1.</p>
+<p>End of proof.</p>
+<p>Because palindromics are symmetric, we can use dynamic programming to reuse some calculation. We add aother different special character at the begining to prevent potential index out of bound error, now useful indices starts from 1.</p>
+<p>The code structure in pseudo-code:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">S = new string mentioned above</span><br><span class="line">P = []</span><br><span class="line">maxId = <span class="number">0</span></span><br><span class="line">id = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="tag">i</span> <span class="keyword">in</span> <span class="number">1</span> to sLen:</span><br><span class="line">	<span class="keyword">if</span> maxId &gt; <span class="tag">i</span>:</span><br><span class="line">		P[i] = <span class="function"><span class="title">min</span><span class="params">(p[<span class="number">2</span>*id-i], maxId-i)</span></span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		P[i] = <span class="number">1</span></span><br><span class="line">		</span><br><span class="line">	while S[i+P[i]] == S[i-P[i]]:</span><br><span class="line">		P[i]++</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> P[i]+<span class="tag">i</span> &gt; maxId:</span><br><span class="line">		maxId = P[i] + <span class="tag">i</span></span><br><span class="line">		id = i</span><br></pre></td></tr></table></figure>
+<h4 id="Source">Source</h4><p>[1] Wikipedia: <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring" target="_blank" rel="external">Longest palindromic substring</a></p>
+<p>[2] Wikipedia: <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank" rel="external">Palindrome</a></p>
+<p>[3] GeeksforGeeks: <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/" target="_blank" rel="external">Manacher’s Algorithm – Part 1</a> <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-2/" target="_blank" rel="external">Part 2</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -155,7 +136,7 @@ HTML documents are based on hierarchy of elements, each element is either the pa
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/CSS/">CSS</a>
+  <span></span> <a href="/tags/Algorithm/">Algorithm</a>
   </div>
 
 </div>
@@ -164,7 +145,7 @@ HTML documents are based on hierarchy of elements, each element is either the pa
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://vanticz.github.io/post/CSS-Selectors-2/" data-title="CSS-Selectors(2) | Learn Record Share" data-tsina="null" class="share clearfix">
+	  <div data-url="http://vanticz.github.io/post/Manachers-Algorithm/" data-title="Manacher&#39;s Algorithm | Learn Record Share" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -177,19 +158,11 @@ HTML documents are based on hierarchy of elements, each element is either the pa
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/post/Manachers-Algorithm/" title="Manacher&#39;s Algorithm">
-  <strong>previous:</strong><br/>
-  <span>
-  Manacher&#39;s Algorithm</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/post/CSS-Selectors/"  title="CSS-Selectors">
+<a href="/post/CSS-Selectors-2/"  title="CSS-Selectors(2)">
  <strong>next:</strong><br/> 
- <span>CSS-Selectors
+ <span>CSS-Selectors(2)
 </span>
 </a>
 </div>
@@ -210,7 +183,7 @@ HTML documents are based on hierarchy of elements, each element is either the pa
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#This_is_the_second_part_of_CSS_Selector"><span class="toc-number">1.</span> <span class="toc-text">This is the second part of CSS Selector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using_Document_Structure"><span class="toc-number">1.1.</span> <span class="toc-text">Using Document Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pseudo-Classes_and_Pseudo-Elements"><span class="toc-number">1.2.</span> <span class="toc-text">Pseudo-Classes and Pseudo-Elements</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Source"><span class="toc-number">1.</span> <span class="toc-text">Source</span></a></li></ol>
  
   </div>
 
