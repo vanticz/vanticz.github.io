@@ -81,6 +81,94 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/post/Update-BASH-on-Mac-OSX/" title="Update BASH on Mac OSX" itemprop="url">Update BASH on Mac OSX</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
+		
+  <p class="article-time">
+    <time datetime="2016-12-06T15:09:53.000Z" itemprop="datePublished"> Published 2016-12-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Problem">Problem</h2><p>Today I wrote a simple shell script <em>case.sh</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">var=AbCDefghIjk</span><br><span class="line"></span><br><span class="line"><span class="comment"># transfer $var to lowercase/uppercase</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var,,&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var^^&#125;</span></span><br></pre></td></tr></table></figure>
+<p>But when I tried to execute it:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>chmod +x ./<span class="keyword">case</span>.sh</span><br><span class="line"><span class="variable">$ </span>./<span class="keyword">case</span>.sh</span><br><span class="line">./<span class="keyword">case</span>.<span class="symbol">sh:</span> line <span class="number">6</span>: <span class="variable">$&#123;</span>var,,&#125;: bad substitution</span><br><span class="line">./<span class="keyword">case</span>.<span class="symbol">sh:</span> line <span class="number">7</span>: <span class="variable">$&#123;</span>var^^&#125;: bad substitution</span><br></pre></td></tr></table></figure>
+<p><strong><em>Note:</em></strong> lines start with <code>$</code> are commands in Terminal.</p>
+<h2 id="Analysis">Analysis</h2><p>I found out that Mac OSX has a rather old version of bash:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">3.2</span>.<span class="number">57</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
+<p><code>,,</code> and <code>^^</code> are feathers in bash 4, in bash 3.x, using <em>tr</em> is one way to convert lower/upper-case.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">var=AbCDefghIjk</span><br><span class="line">var2=$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span>"</span> | tr <span class="string">'[:lower:]'</span> <span class="string">'[:upper:]'</span>)</span><br><span class="line">var3=$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span>"</span> | tr <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$var2</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$var3</span>"</span></span><br><span class="line"></span><br><span class="line">Outputs:</span><br><span class="line">ABCDEFGHIJK</span><br><span class="line">abcdefghijk</span><br></pre></td></tr></table></figure>
+<h2 id="Solution">Solution</h2><p>To use a newer version of bash on Mac OSX, we can use <a href="http://brew.sh" target="_blank" rel="external">homebrew</a>. Execute <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code> in Terminal to install Homebrew.</p>
+<p>Once Homebrew is fully installed, install bash with Homebrew</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>update</span><br><span class="line">$ <span class="keyword">brew </span>install <span class="keyword">bash</span></span><br></pre></td></tr></table></figure>
+<p>After that, <code>$ which bash</code> would result in <code>/usr/local/bin/bash</code> instead of the previous <code>/bin/bash</code>. However, <em>case.sh</em> still doesn’t work.</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./case.<span class="keyword">sh</span></span><br><span class="line">./case.<span class="keyword">sh</span>: <span class="keyword">line</span> 6: <span class="label">$&#123;var</span>,,&#125;: bad substitution</span><br><span class="line">./case.<span class="keyword">sh</span>: <span class="keyword">line</span> 7: <span class="label">$&#123;var</span>^^&#125;: bad substitution</span><br></pre></td></tr></table></figure>
+<p>Check bash version, it’s still 3.x:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">3.2</span>.<span class="number">57</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
+<p>Because the <strong>first line</strong> of <em>version.sh</em> still points to the old bash, fix this by changing it to the new bash:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/usr/local/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">4.4</span>.<span class="number">5</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
+<h2 id="Further_settings">Further settings</h2><p>1.Allow Terminal to use the new shell, add it to the list of allowed shells:</p>
+<p><code>$ sudo echo &quot;$(brew --prefix)/bin/bash&quot; &gt;&gt; /etc/shells</code></p>
+<p>or <code>$ sudo echo &quot;/usr/local/bin/bash&quot; &gt;&gt; /etc/shells</code></p>
+<p>root password is required.</p>
+<p>2.Change the login shell to the new bash:</p>
+<p><code>$ chsh -s $(brew --prefix)/bin/bash</code></p>
+<p>or <code>$ chsh -s /usr/local/bin/bash</code></p>
+<p>again root password is required.</p>
+<p>Reopen Terminal and you are ready to bash 4.x!</p>
+<blockquote>
+<p><strong><em>Note:</em></strong> make sure <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> are in your <code>$PATH</code> variable before <code>/usr/bin</code> and <code>/usr/sbin</code></p>
+</blockquote>
+<h3 id="Source:">Source:</h3><p>[1] <a href="http://apple.stackexchange.com/questions/193411/update-bash-to-version-4-0-on-osx" target="_blank" rel="external">Update bash to version 4.0 on OSX</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Setup/">Setup</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/post/Update-BASH-on-Mac-OSX/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/post/Manachers-Algorithm/" title="Manacher&#39;s Algorithm" itemprop="url">Manacher&#39;s Algorithm</a>
   </h1>
   <p class="article-author">By
@@ -408,6 +496,10 @@
 		
 			
 				<li><a href="/tags/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Setup/" title="Setup">Setup<sup>1</sup></a></li>
 			
 		
 			
