@@ -1,698 +1,1276 @@
+<!DOCTYPE html>
 
- <!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+
+
+
+
+
   
-    <title>Learn Record Share</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Zeming Zhou">
-    
 
-    
-    <meta name="description">
-<meta property="og:type" content="website">
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"slideDownBigIn","post_header":"slideDownBigIn","post_body":"slideDownBigIn","coll_header":"slideDownBigIn","sidebar":"slideDownBigIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Learn Record Share">
-<meta property="og:url" content="http://vanticz.github.io/index.html">
+<meta property="og:url" content="https://vanticz.github.io/index.html">
 <meta property="og:site_name" content="Learn Record Share">
-<meta property="og:description">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learn Record Share">
-<meta name="twitter:description">
 
-    
-    <link rel="alternative" href="/atom.xml" title="Learn Record Share" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.jpg">
-    
-    
-    <link rel="apple-touch-icon" href="/img/black_man.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/black_man.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+
+
+
+  <link rel="canonical" href="https://vanticz.github.io/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Learn Record Share</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.jpg" alt="Learn Record Share" title="Learn Record Share"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Learn Record Share">Learn Record Share</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:vanticz.github.io">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/post/Update-BASH-on-Mac-OSX/" title="Update BASH on Mac OSX" itemprop="url">Update BASH on Mac OSX</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2016-12-06T15:09:53.000Z" itemprop="datePublished"> Published 2016-12-06</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Problem">Problem</h2><p>Today I wrote a simple shell script <em>case.sh</em>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">var=AbCDefghIjk</span><br><span class="line"></span><br><span class="line"><span class="comment"># transfer $var to lowercase/uppercase</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var,,&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var^^&#125;</span></span><br></pre></td></tr></table></figure>
-<p>But when I tried to execute it:</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>chmod +x ./<span class="keyword">case</span>.sh</span><br><span class="line"><span class="variable">$ </span>./<span class="keyword">case</span>.sh</span><br><span class="line">./<span class="keyword">case</span>.<span class="symbol">sh:</span> line <span class="number">6</span>: <span class="variable">$&#123;</span>var,,&#125;: bad substitution</span><br><span class="line">./<span class="keyword">case</span>.<span class="symbol">sh:</span> line <span class="number">7</span>: <span class="variable">$&#123;</span>var^^&#125;: bad substitution</span><br></pre></td></tr></table></figure>
-<p><strong><em>Note:</em></strong> lines start with <code>$</code> are commands in Terminal.</p>
-<h2 id="Analysis">Analysis</h2><p>I found out that Mac OSX has a rather old version of bash:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">3.2</span>.<span class="number">57</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
-<p><code>,,</code> and <code>^^</code> are feathers in bash 4, in bash 3.x, using <em>tr</em> is one way to convert lower/upper-case.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">var=AbCDefghIjk</span><br><span class="line">var2=$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span>"</span> | tr <span class="string">'[:lower:]'</span> <span class="string">'[:upper:]'</span>)</span><br><span class="line">var3=$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$var</span>"</span> | tr <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$var2</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$var3</span>"</span></span><br><span class="line"></span><br><span class="line">Outputs:</span><br><span class="line">ABCDEFGHIJK</span><br><span class="line">abcdefghijk</span><br></pre></td></tr></table></figure>
-<h2 id="Solution">Solution</h2><p>To use a newer version of bash on Mac OSX, we can use <a href="http://brew.sh" target="_blank" rel="external">homebrew</a>. Execute <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code> in Terminal to install Homebrew.</p>
-<p>Once Homebrew is fully installed, install bash with Homebrew</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>update</span><br><span class="line">$ <span class="keyword">brew </span>install <span class="keyword">bash</span></span><br></pre></td></tr></table></figure>
-<p>After that, <code>$ which bash</code> would result in <code>/usr/local/bin/bash</code> instead of the previous <code>/bin/bash</code>. However, <em>case.sh</em> still doesn’t work.</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./case.<span class="keyword">sh</span></span><br><span class="line">./case.<span class="keyword">sh</span>: <span class="keyword">line</span> 6: <span class="label">$&#123;var</span>,,&#125;: bad substitution</span><br><span class="line">./case.<span class="keyword">sh</span>: <span class="keyword">line</span> 7: <span class="label">$&#123;var</span>^^&#125;: bad substitution</span><br></pre></td></tr></table></figure>
-<p>Check bash version, it’s still 3.x:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">3.2</span>.<span class="number">57</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
-<p>Because the <strong>first line</strong> of <em>version.sh</em> still points to the old bash, fix this by changing it to the new bash:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat ./version.sh</span><br><span class="line"><span class="shebang">#!/usr/local/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$BASH_VERSION</span></span><br><span class="line"></span><br><span class="line">$ ./version.sh</span><br><span class="line"><span class="number">4.4</span>.<span class="number">5</span>(<span class="number">1</span>)-release</span><br></pre></td></tr></table></figure>
-<h2 id="Further_settings">Further settings</h2><p>1.Allow Terminal to use the new shell, add it to the list of allowed shells:</p>
-<p><code>$ sudo echo &quot;$(brew --prefix)/bin/bash&quot; &gt;&gt; /etc/shells</code></p>
-<p>or <code>$ sudo echo &quot;/usr/local/bin/bash&quot; &gt;&gt; /etc/shells</code></p>
-<p>root password is required.</p>
-<p>2.Change the login shell to the new bash:</p>
-<p><code>$ chsh -s $(brew --prefix)/bin/bash</code></p>
-<p>or <code>$ chsh -s /usr/local/bin/bash</code></p>
-<p>again root password is required.</p>
-<p>Reopen Terminal and you are ready to bash 4.x!</p>
-<blockquote>
-<p><strong><em>Note:</em></strong> make sure <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> are in your <code>$PATH</code> variable before <code>/usr/bin</code> and <code>/usr/sbin</code></p>
-</blockquote>
-<h3 id="Source:">Source:</h3><p>[1] <a href="http://apple.stackexchange.com/questions/193411/update-bash-to-version-4-0-on-osx" target="_blank" rel="external">Update bash to version 4.0 on OSX</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/Setup/">Setup</a>
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learn Record Share</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
 
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 
 
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/Update-BASH-on-Mac-OSX/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/post/Manachers-Algorithm/" title="Manacher&#39;s Algorithm" itemprop="url">Manacher&#39;s Algorithm</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2016-11-29T15:58:42.000Z" itemprop="datePublished"> Published 2016-11-29</time>
-    
-  </p>
-</header>
-    <div class="article-content">
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-        <blockquote>
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2016/12/Update-BASH-on-Mac-OSX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/Update-BASH-on-Mac-OSX/" itemprop="url">
+                  Update BASH on Mac OSX
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2016-12-06 10:09:53" itemprop="dateCreated datePublished" datetime="2016-12-06T10:09:53-05:00">2016-12-06</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Today I wrote a simple shell script <em>case.sh</em>:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">var=AbCDefghIjk</span><br><span class="line"></span><br><span class="line"><span class="comment"># transfer $var to lowercase/uppercase</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var,,&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var^^&#125;</span></span><br></pre></td></tr></table></figure>
+<p>But when I tried to execute it:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x ./case.sh</span><br><span class="line">$ ./case.sh</span><br><span class="line">./case.sh: line 6: <span class="variable">$&#123;var,,&#125;</span>: bad substitution</span><br><span class="line">./case.sh: line 7: <span class="variable">$&#123;var^^&#125;</span>: bad substitution</span><br></pre></td></tr></table></figure>
+<p><strong><em>Note:</em></strong> lines start with <code>$</code> are commands in Terminal.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/Update-BASH-on-Mac-OSX/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2016/11/Manachers-Algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/Manachers-Algorithm/" itemprop="url">
+                  Manacher's Algorithm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2016-11-29 10:58:42" itemprop="dateCreated datePublished" datetime="2016-11-29T10:58:42-05:00">2016-11-29</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
 <p>In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.</p>
+</blockquote>
+<blockquote>
 <p>A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward, such as ‘madam’ or ‘kayak’.</p>
 </blockquote>
 <p>Manacher’s algorithm can find the longest palindromic substring in time complexity <strong>O(n)</strong>.</p>
-<p>Algorithms are different when detecting odd-length palindrome and even-length palindrome. So the first step of Manacher’s algorithm uses a trick to eliminate this difference: pick a special character that does not exist in the original string, insert it on both sides of each character.</p>
-<p>For example:</p>
-<p><code>aba</code> and <code>|</code> becomes <code>|a|b|a|</code></p>
-<p><code>abba</code> and <code>#</code> becomes <code>#a#b#b#a#</code></p>
-<p>Now the length of the new string is guaranteed to be odd, we call this new string <em>S</em> for simplicity.</p>
-<p>Then it uses an helper array/list P to track the radius of the longest palindrome centered at each character. P[i] is the radius of the longest palindrome centered at S[i], and P[i] has a minimum value 1, when the longest palindrome is S[i] itself.</p>
-<p>For example:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S:	<span class="preprocessor"># a # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">S:	<span class="preprocessor"># a # b # b # a #</span></span><br><span class="line">P:	<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>We can prove that P[i]-1 is the length of palindrome centered at S[i] in the original string.</p>
-<p><strong>Proof:</strong></p>
-<p>A palindrome in the new string S must begin and end with #</p>
-<pre><code><span class="tag">e</span><span class="class">.g</span>. #, <span class="id">#a</span>#, <span class="id">#a</span><span class="id">#b</span><span class="id">#b</span><span class="id">#a</span>#
-</code></pre><p>If we get rid of a # either at the begining or the end of palindrome, each character has a # to pair with.</p>
-<pre><code>e.g. <span class="comment">()</span>, <span class="comment">(a#)</span>, <span class="comment">(a#)</span><span class="comment">(b#)</span><span class="comment">(b#)</span><span class="comment">(a#)</span>
-</code></pre><p>That means the length of palindrome in S minus one is twice the size of palindrome in the original string.</p>
-<p>Let L = 2 * P[i] - 1 be the length of palindrome in S centered at S[i], then the length of palindrome in original string is (L - 1) / 2,<br>equals to P[i] - 1.</p>
-<p>End of proof.</p>
-<p>Because palindromics are symmetric, we can use dynamic programming to reuse some calculation. We add aother different special character at the begining to prevent potential index out of bound error, now useful indices starts from 1.</p>
-<p>The code structure in pseudo-code:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">S = new string mentioned above</span><br><span class="line">P = []</span><br><span class="line">maxId = <span class="number">0</span></span><br><span class="line">id = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="tag">i</span> <span class="keyword">in</span> <span class="number">1</span> to sLen:</span><br><span class="line">	<span class="keyword">if</span> maxId &gt; <span class="tag">i</span>:</span><br><span class="line">		P[i] = <span class="function"><span class="title">min</span><span class="params">(p[<span class="number">2</span>*id-i], maxId-i)</span></span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		P[i] = <span class="number">1</span></span><br><span class="line">		</span><br><span class="line">	while S[i+P[i]] == S[i-P[i]]:</span><br><span class="line">		P[i]++</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> P[i]+<span class="tag">i</span> &gt; maxId:</span><br><span class="line">		maxId = P[i] + <span class="tag">i</span></span><br><span class="line">		id = i</span><br></pre></td></tr></table></figure>
-<h4 id="Source">Source</h4><p>[1] Wikipedia: <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring" target="_blank" rel="external">Longest palindromic substring</a></p>
-<p>[2] Wikipedia: <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank" rel="external">Palindrome</a></p>
-<p>[3] GeeksforGeeks: <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/" target="_blank" rel="external">Manacher’s Algorithm – Part 1</a> <a href="http://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-2/" target="_blank" rel="external">Part 2</a></p>
-
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/Manachers-Algorithm/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
-        
-        <p class="article-more-link">
-          
-       </p>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
+    
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Algorithm/">Algorithm</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/Manachers-Algorithm/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
+  
+  
+  
+  </article>
 
 
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2015/11/CSS-Selectors-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
     
-      <a href="/post/CSS-Selectors-2/" title="CSS-Selectors(2)" itemprop="url">CSS-Selectors(2)</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-18T15:20:09.000Z" itemprop="datePublished"> Published 2015-11-18</time>
-    
-  </p>
-</header>
-    <div class="article-content">
+      <header class="post-header">
+
         
-        <h2 id="This_is_the_second_part_of_CSS_Selector">This is the second part of CSS Selector</h2><h3 id="Using_Document_Structure">Using Document Structure</h3><p><strong>Understanding parent-child relationship:</strong></p>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/CSS-Selectors-2/" itemprop="url">
+                  CSS-Selectors(2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-11-18 10:20:09" itemprop="dateCreated datePublished" datetime="2015-11-18T10:20:09-05:00">2015-11-18</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="This-is-the-second-part-of-CSS-Selector"><a href="#This-is-the-second-part-of-CSS-Selector" class="headerlink" title="This is the second part of CSS Selector"></a>This is the second part of CSS Selector</h2><h3 id="Using-Document-Structure"><a href="#Using-Document-Structure" class="headerlink" title="Using Document Structure"></a>Using Document Structure</h3><p><strong>Understanding parent-child relationship:</strong></p>
 <blockquote>
 <p>HTML documents are based on hierarchy of elements, each element is either the <em>parent</em> or the <em>child</em> of another element (usually both, except leaves and the root ). Generally in tree structure of HTML document, elements above one element is called <em>ancestor</em>, and elements beneath it are called <em>descendant</em>. <em>Parent</em> and <em>child</em> are specific terms, they are <em>ancestor</em> or <em>descendant</em> of exactly <strong>one</strong> layer.</p>
 </blockquote>
-<p><strong>Descendant Selectors:</strong> (AKA, <em>contextual selectors</em>) a white space between selectors. Example: <code>h1 em {color: gray;}</code> This will ‘gray’ any em elements that is a decendant of an h1.</p>
-<p><strong>Selecting Children:</strong> using the greater-than sign, Example: <code>h1 &gt; strong {color: red;}</code> This selects the first bot not the second line below.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>so<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>very <span class="tag">&lt;<span class="title">strong</span>&gt;</span>but not that<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>In the first line, strong is a child of h1, while in the second line, strong is a descendant of h1, not a child.</p>
-<p><strong>Selecting Adjacent Sibling Elements:</strong> using the plus sign. Example: <code>h1 + p {margin-top: 0};</code> This selects the paragraph “immediately <strong>follows</strong> an h1 element that shares a parent with the p element”, can not select the sibling before.</p>
-<h3 id="Pseudo-Classes_and_Pseudo-Elements">Pseudo-Classes and Pseudo-Elements</h3><p><strong>Syntax:</strong> <em>Pseudo-</em> started selectors share the same syntas, the colon.</p>
-<p><strong>Pseudo-Class Selectors:</strong>  </p>
-<ul>
-<li>Link pseudo-classes<ol>
-<li><code>:link</code> is for unvisited link, can be written as <code>a:link {clolr: blue;}</code> but this is redundant, usually just omitted. <code>a {clolr: blue;}</code></li>
-<li><code>:visited</code> for hyperlinks to already visited address. <code>a:visited {clolr: red;}</code></li>
-</ol>
-</li>
-<li>Dynamic pseudo-classes<ol>
-<li><code>:focus</code> is the element currently has the input focus, example <code>input:focus {...}</code></li>
-<li><code>:hover</code> is the element your mouse pointer is placed on.</li>
-<li><code>:active</code> is the element activated by user input, like click and hold mouse on an element.</li>
-</ol>
-</li>
-<li>Selecting a first child<ul>
-<li>This could be misunderstanding, for example <code>p:first-child</code> <strong>DOES NOT</strong> select the first child of a <em>p</em> element, it selects any <em>p</em> element that is the first child of <strong>another element</strong>.</li>
-</ul>
-</li>
-<li>Selecting based on language<ul>
-<li><code>*:lang(en) {...}</code> this is exactly like <code>|=</code> attribute selector from last post.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Combining pseudo-classes</strong> is just like grouping, example: <code>a:link:hover:lang(en) {...}</code></p>
-<p><strong>Pseudo-Element Selectors:</strong>  </p>
-<ul>
-<li><code>:first-letter</code> and <code>:first-line</code> are literally the first letter and line of an element.</li>
-<li><p><code>:before</code> and <code>:after</code>: Used to add contents before or after an element, for example, the following code add “[[“ and “]]” around any h2 elements.</p>
-  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h2</span><span class="pseudo">:before</span> <span class="rules">&#123;<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"[["</span></span></span>;&#125;</span></span><br><span class="line"><span class="tag">h2</span><span class="pseudo">:after</span> <span class="rules">&#123;<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"]]"</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>This is the end of CSS Selectors, again this is just my simple summary when learning by the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="external">Cascading Style Sheets: The Definitive Guide</a></strong>. All the code parts above are based on examples in book.</p>
-
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/11/CSS-Selectors-2/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
-        
-        <p class="article-more-link">
-          
-       </p>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
+    
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/CSS/">CSS</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/CSS-Selectors-2/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
+  
+  
+  
+  </article>
 
 
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2015/11/CSS-Selectors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
     
-      <a href="/post/CSS-Selectors/" title="CSS-Selectors" itemprop="url">CSS-Selectors</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-11T03:07:28.000Z" itemprop="datePublished"> Published 2015-11-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="To_begin_with">To begin with</h2><p>I’m following the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="external">Cascading Style Sheets: The Definitive Guide</a></strong> for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep what CSS can do, and I personally like <strong><em>O’Reilly Media</em></strong> series.</p>
-<h2 id="Now_let’s_start_with_today’s_topic:_Selectors">Now let’s start with today’s topic: Selectors</h2><h3 id="Quick_review_on_basic_CSS_selectors">Quick review on basic CSS selectors</h3><p><strong>Element Selector:</strong> <code>Selector {Property: Value; Property: Value;}</code></p>
-<p><strong>Universal Selector:</strong> <code>* {Property: Value;}</code></p>
-<p><strong>Class Selector:</strong> <code>.Classname {Property: Value;}</code></p>
-<p><strong>ID Selector:</strong> <code>#IDname {Property: Value;}</code>  </p>
-<blockquote>
-<p>notice: Class is literally for elements sharing same properties, you may assign classes to any number of elemnts. While ID are used only once within an HTML document.  </p>
-<p>Although browser don’t usually check uniqueness of IDs in HTML, meaning you can use same ID multiple times. This could make DOM scripting <em>getElementById()</em> more difficult so it’s not recommended, use a Class instead works better.  </p>
-<p>Class and ID are <em>case-sensitive</em>.</p>
-</blockquote>
-<hr>
-<h3 id="Attribute_Selectors">Attribute Selectors</h3><p><strong>Basic Attribute Selector:</strong> <code>h1[class] {color:red&#39;}</code>, this will make all text below red</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"hello"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"css"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"oreilly"</span>&gt;</span>OReilly<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>Selection Based on Exact Attribute Value:</strong> Add one value for attribute in <code>[]</code>. For example, <code>h1[class=&quot;hello&quot;] {color:red&#39;}</code> will only make the “Hello” above red but leave other two words unchanged.</p>
-<p><strong>Selection Based on Partial Attribute Values:</strong> “For attributes with space-separated list of words, use <code>[attr~=&quot;val&quot;]</code> to select based on presence of any one of those words”. For example, <code>span[class~=&quot;windy&quot;] {font-style: italic;}</code> will make Vancover and Montreal italic, and Toronto untouhed. (Please ignore poor word choice)</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"sunny cloudless"</span>&gt;</span>Toronto<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"rainy windy"</span>&gt;</span>Vancover<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"windy snow"</span>&gt;</span>Montreal<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Here’s more partial-value attribute selectors using Regular Expression</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[foo^=<span class="string">"bar"</span>]	Selects any element <span class="keyword">with</span> an attribute foo <span class="keyword">whose</span> value <span class="keyword">begins with</span> <span class="string">"bar"</span></span><br><span class="line">[foo$=<span class="string">"bar"</span>]	Selects any element <span class="keyword">with</span> an attribute foo <span class="keyword">whose</span> value <span class="keyword">ends with</span> <span class="string">"bar"</span></span><br><span class="line">[foo*=<span class="string">"bar"</span>]	Selects any element <span class="keyword">with</span> an attribute foo <span class="keyword">whose</span> value <span class="keyword">contains</span> substring <span class="keyword">with</span> <span class="string">"bar"</span></span><br></pre></td></tr></table></figure>
-<p><strong>A Particular Attribute Selection Type:</strong> <code>*[lang|=&quot;en&quot;] {color: white;}</code> selects any element whose lang attribute is equal to en or begins with en-. This is useful when you have a series of, say, image files <em>figure-1.jpg</em>, <em>figure-2.png</em>, <em>figure-1.gif</em>, etc. You can select the all using <code>img[src|=&quot;figure&quot;] {}</code></p>
-<hr>
-<p>I’ll stop here and leave Selector of <em>Document Structure</em>, <em>Pseudo-Class</em>, and <em>Pseudo-Elements</em> next post.</p>
+      <header class="post-header">
 
         
         
-        <p class="article-more-link">
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/CSS-Selectors/" itemprop="url">
+                  CSS-Selectors
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-11-10 22:07:28" itemprop="dateCreated datePublished" datetime="2015-11-10T22:07:28-05:00">2015-11-10</time>
+            
+
+            
+          </span>
+
           
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
+          
+            
+          
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/CSS/">CSS</a>
-  </div>
+          
+          
 
-</div>
+          
 
+          
 
+          
 
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/CSS-Selectors/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+        </div>
+      </header>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+
     
-      <a href="/post/hello-hexo/" title="Hello Hexo!" itemprop="url">Hello Hexo!</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zeming Zhou" target="_blank" itemprop="author">Zeming Zhou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-03T23:51:12.000Z" itemprop="datePublished"> Published 2015-11-03</time>
     
-  </p>
-</header>
-    <div class="article-content">
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <p>Thanks to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> and theme <a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a> so I can build my blog easily!</p>
+          <h2 id="To-begin-with"><a href="#To-begin-with" class="headerlink" title="To begin with"></a>To begin with</h2><p>I’m following the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="noopener">Cascading Style Sheets: The Definitive Guide</a></strong> for posts with prefix “CSS-“. I chose this book because other than simply introducing syntax and basics, it digs deep what CSS can do, and I personally like <strong><em>O’Reilly Media</em></strong> series.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/11/CSS-Selectors/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2015/11/hello-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/hello-hexo/" itemprop="url">
+                  Hello Hexo!
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-11-03 18:51:12" itemprop="dateCreated datePublished" datetime="2015-11-03T18:51:12-05:00">2015-11-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Thanks to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a> and theme <a href="https://github.com/wuchong/jacman" target="_blank" rel="noopener">Jacman</a> so I can build my blog easily!</p>
 <p>This blog is mainly a self-learning record, I’ll also post some tips or things I personally think worth sharing.</p>
 <p>Hope this could be a self-motivation and help someone at the mean time.</p>
 
-        
-        
-        <p class="article-more-link">
           
-       </p>
+        
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/post/hello-hexo/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
+    
+  </section>
 
   
 
+
+          </div>
+          
+
+        </div>
+        
+          
   
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/CSS/" title="CSS">CSS<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Setup/" title="Setup">Setup<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
-        
-          <li>
-            
-            	<a href="https://github.com/vanticz" target="_blank" title="Github">Github</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
-</aside>
-</div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Zeming (Van) Zhou. <br/>
-			</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		
-		<a href="https://github.com/vanticz" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-			
-		
+  </div>
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
-		
-		<a href="/about" target="_blank" title="Zeming Zhou">Zeming Zhou</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Van Zhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
-    }
-  });
-});
-</script>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Van Zhou</span>
+
+  
+
+  
+</div>
 
 
 
 
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
 
 <script type="text/javascript">
-
-var disqus_shortname = 'vanticz';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-}); 
 </script>
 
 
 
-<!-- Analytics Begin -->
 
 
 
 
 
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
 
-<!-- Tiny_search End -->
 
-  </body>
- </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"slideDownBigIn","post_header":"slideDownBigIn","post_body":"slideDownBigIn","coll_header":"slideDownBigIn","sidebar":"slideDownBigIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:  HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS-Selectors(2)">
+<meta property="og:url" content="https://vanticz.github.io/2015/11/CSS-Selectors-2/index.html">
+<meta property="og:site_name" content="Learn Record Share">
+<meta property="og:description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:  HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-09T01:16:09.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS-Selectors(2)">
+<meta name="twitter:description" content="This is the second part of CSS SelectorUsing Document StructureUnderstanding parent-child relationship:  HTML documents are based on hierarchy of elements, each element is either the parent or the chi">
+
+
+
+
+
+
+  <link rel="canonical" href="https://vanticz.github.io/2015/11/CSS-Selectors-2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CSS-Selectors(2) | Learn Record Share</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learn Record Share</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vanticz.github.io/2015/11/CSS-Selectors-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Van Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learn Record Share">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS-Selectors(2)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-11-18 10:20:09" itemprop="dateCreated datePublished" datetime="2015-11-18T10:20:09-05:00">2015-11-18</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="This-is-the-second-part-of-CSS-Selector"><a href="#This-is-the-second-part-of-CSS-Selector" class="headerlink" title="This is the second part of CSS Selector"></a>This is the second part of CSS Selector</h2><h3 id="Using-Document-Structure"><a href="#Using-Document-Structure" class="headerlink" title="Using Document Structure"></a>Using Document Structure</h3><p><strong>Understanding parent-child relationship:</strong></p>
+<blockquote>
+<p>HTML documents are based on hierarchy of elements, each element is either the <em>parent</em> or the <em>child</em> of another element (usually both, except leaves and the root ). Generally in tree structure of HTML document, elements above one element is called <em>ancestor</em>, and elements beneath it are called <em>descendant</em>. <em>Parent</em> and <em>child</em> are specific terms, they are <em>ancestor</em> or <em>descendant</em> of exactly <strong>one</strong> layer.</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>Descendant Selectors:</strong> (AKA, <em>contextual selectors</em>) a white space between selectors. Example: <code>h1 em {color: gray;}</code> This will ‘gray’ any em elements that is a decendant of an h1.</p>
+<p><strong>Selecting Children:</strong> using the greater-than sign, Example: <code>h1 &gt; strong {color: red;}</code> This selects the first bot not the second line below.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">strong</span>&gt;</span>so<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">em</span>&gt;</span>very <span class="tag">&lt;<span class="name">strong</span>&gt;</span>but not that<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In the first line, strong is a child of h1, while in the second line, strong is a descendant of h1, not a child.</p>
+<p><strong>Selecting Adjacent Sibling Elements:</strong> using the plus sign. Example: <code>h1 + p {margin-top: 0};</code> This selects the paragraph “immediately <strong>follows</strong> an h1 element that shares a parent with the p element”, can not select the sibling before.</p>
+<h3 id="Pseudo-Classes-and-Pseudo-Elements"><a href="#Pseudo-Classes-and-Pseudo-Elements" class="headerlink" title="Pseudo-Classes and Pseudo-Elements"></a>Pseudo-Classes and Pseudo-Elements</h3><p><strong>Syntax:</strong> <em>Pseudo-</em> started selectors share the same syntas, the colon.</p>
+<p><strong>Pseudo-Class Selectors:</strong>  </p>
+<ul>
+<li>Link pseudo-classes<ol>
+<li><code>:link</code> is for unvisited link, can be written as <code>a:link {clolr: blue;}</code> but this is redundant, usually just omitted. <code>a {clolr: blue;}</code></li>
+<li><code>:visited</code> for hyperlinks to already visited address. <code>a:visited {clolr: red;}</code></li>
+</ol>
+</li>
+<li>Dynamic pseudo-classes<ol>
+<li><code>:focus</code> is the element currently has the input focus, example <code>input:focus {...}</code></li>
+<li><code>:hover</code> is the element your mouse pointer is placed on.</li>
+<li><code>:active</code> is the element activated by user input, like click and hold mouse on an element.</li>
+</ol>
+</li>
+<li>Selecting a first child<ul>
+<li>This could be misunderstanding, for example <code>p:first-child</code> <strong>DOES NOT</strong> select the first child of a <em>p</em> element, it selects any <em>p</em> element that is the first child of <strong>another element</strong>.</li>
+</ul>
+</li>
+<li>Selecting based on language<ul>
+<li><code>*:lang(en) {...}</code> this is exactly like <code>|=</code> attribute selector from last post.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Combining pseudo-classes</strong> is just like grouping, example: <code>a:link:hover:lang(en) {...}</code></p>
+<p><strong>Pseudo-Element Selectors:</strong>  </p>
+<ul>
+<li><code>:first-letter</code> and <code>:first-line</code> are literally the first letter and line of an element.</li>
+<li><p><code>:before</code> and <code>:after</code>: Used to add contents before or after an element, for example, the following code add “[[“ and “]]” around any h2 elements.</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;<span class="attribute">content</span>: <span class="string">"[["</span>;&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:after</span> &#123;<span class="attribute">content</span>: <span class="string">"]]"</span>;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>This is the end of CSS Selectors, again this is just my simple summary when learning by the book <strong><a href="http://www.amazon.ca/CSS-Definitive-Eric-A-Meyer/dp/0596527330" target="_blank" rel="noopener">Cascading Style Sheets: The Definitive Guide</a></strong>. All the code parts above are based on examples in book.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/CSS-Selectors/" rel="next" title="CSS-Selectors">
+                <i class="fa fa-chevron-left"></i> CSS-Selectors
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/Manachers-Algorithm/" rel="prev" title="Manacher's Algorithm">
+                Manacher's Algorithm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Van Zhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-the-second-part-of-CSS-Selector"><span class="nav-number">1.</span> <span class="nav-text">This is the second part of CSS Selector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-Document-Structure"><span class="nav-number">1.1.</span> <span class="nav-text">Using Document Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pseudo-Classes-and-Pseudo-Elements"><span class="nav-number">1.2.</span> <span class="nav-text">Pseudo-Classes and Pseudo-Elements</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Van Zhou</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
